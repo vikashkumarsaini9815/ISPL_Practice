@@ -1,0 +1,73 @@
+[{
+    "id": 1,
+    "stage1": "ISPL Stage-1( ISPL Grand Finale)",
+    "overview": "ISPL Grand Finale will be organized at Physical location based major participants location requests. ",
+    "eligibility": " Stage-3 shortlisted  teams are eligible to  participate in ISPL Stage-4 Grand Finale.",
+    "fee":"Ilearnplace Student Member fee:   0 INR, NON ILP Student Member: 700  INR",
+    "judgementCriteria": "Jury panel will evaluate  based on live STEM project performance  with  following points Number of Science & Mathematics  Concepts practically implemented Based on video presentation    Engineering Design    Use of STEM concepts in real life.",
+    "dates": "Last Date of Video Submission:  5th September  2023",
+    "cashAwards": [
+      {
+        "winner": "first",
+        "award": 100000
+      },
+      {
+        "winner": "second",
+        "award": 50000
+      }
+    ]
+  },{
+    "id": 2,
+    "stage2": "ISPL Stage-2",
+    "overview": "ISPL Grand Finale will be organized at Physical location based major participants location requests. ",
+    "eligibility": " Stage-3 shortlisted  teams are eligible to  participate in ISPL Stage-4 Grand Finale.",
+    "fee":"Ilearnplace Student Member fee:   0 INR, NON ILP Student Member: 700  INR",
+    "judgementCriteria": "Jury panel will evaluate  based on live STEM project performance  with  following points Number of Science & Mathematics  Concepts practically implemented Based on video presentation    Engineering Design    Use of STEM concepts in real life.",
+    "dates": "Last Date of Video Submission:  5th September  2023",
+    "cashAwards": [
+      {
+        "winner": "first",
+        "award": 100000
+      },
+      {
+        "winner": "second",
+        "award": 5000
+      }
+    ]
+  },{
+    "id": 3,
+    "stage3": "ISPL Stage-3( ISPL Grand Finale)",
+    "overview": "ISPL Grand Finale will be organized at Physical location based major participants location requests. ",
+    "eligibility": " Stage-3 shortlisted  teams are eligible to  participate in ISPL Stage-4 Grand Finale.",
+    "fee":"Ilearnplace Student Member fee:   0 INR, NON ILP Student Member: 700  INR",
+    "judgementCriteria": "Jury panel will evaluate  based on live STEM project performance  with  following points Number of Science & Mathematics  Concepts practically implemented Based on video presentation    Engineering Design    Use of STEM concepts in real life.",
+    "dates": "Last Date of Video Submission:  5th September  2023",
+    "cashAwards": [
+      {
+        "winner": "first",
+        "award": 100000
+      },
+      {
+        "winner": "second",
+        "award": 5000
+      }
+    ]
+  },{
+    "id": 4,
+    "stage4": "ISPL Stage-4( ISPL Grand Finale)",
+    "overview": "ISPL Grand Finale will be organized at Physical location based major participants location requests. ",
+    "eligibility": " Stage-3 shortlisted  teams are eligible to  participate in ISPL Stage-4 Grand Finale.",
+    "fee":"Ilearnplace Student Member fee:   0 INR, NON ILP Student Member: 700  INR",
+    "judgementCriteria": "Jury panel will evaluate  based on live STEM project performance  with  following points Number of Science & Mathematics  Concepts practically implemented Based on video presentation    Engineering Design    Use of STEM concepts in real life.",
+    "dates": "Last Date of Video Submission:  5th September  2023",
+    "cashAwards": [
+      {
+        "winner": "first",
+        "award": 10000
+      },
+      {
+        "winner": "second",
+        "award": 5000
+      }
+    ]
+  }]
