@@ -1,6 +1,8 @@
 from django.contrib import admin
 from django.urls import path
 from .views import *
+from django.conf import settings
+from django.conf.urls.static import static
 
 
 
@@ -9,3 +11,6 @@ urlpatterns = [
     path("allinfo/", All_infoAPIView.as_view(),name='allifoAPIView'),
     path("registration/", RegistrationAPIView.as_view(),name='registration')
 ]
+
+urlpatterns += static(settings.STATIC_URL,document_root=settings.STATIC_ROOT)
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) 
