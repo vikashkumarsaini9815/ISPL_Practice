@@ -20,18 +20,21 @@ class RegistrationAPIView(APIView):
         try:
         
             data = request.data
-            name = data["name"]
-            contact = data["contact"]
-            email = data["email"]
-            school_name = data["school_name"]
-            address = data["address"]
             team_name = data["team_name"]
             project_idea = data["project_idea"]
             project_discrapition = data["project_discrapition"]
             try:
-
-                S1 = Student(name=name, contact=contact, email=email, school_name=school_name, address=address)
-                S1.save()
+                # T1 = Team(team_name=team_name, project_idea=project_idea, project_discrapition=project_discrapition)
+                # T1.save()
+                student = data["students"]
+                for ele in student:
+                    name = ele["name"]
+                    contact = ele["contact"]
+                    email = ele["email"]
+                    school_name = ele["school_name"]
+                    address = ele["address"]
+                    S1 = Student(name=name, contact=contact, email=email, school_name=school_name, address=address)
+                    S1.save()
                 T1 = Team(team_name=team_name, project_idea=project_idea, project_discrapition=project_discrapition)
                 T1.save()
                 response = {"success":True}
