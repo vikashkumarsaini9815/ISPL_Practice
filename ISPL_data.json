@@ -1,4 +1,4 @@
-{"stage1":{
+[{
 	"id": 1,
 	"stage": "ISPL Stage-1( ISPL Grand Finale)",
 	"overview": "ISPL Grand Finale will be organized at Physical location based major participants location requests. ",
@@ -16,7 +16,7 @@
 		}
 	]
 },
-"stage2":{
+{
 	"id": 2,
 	"stage": "ISPL Stage-2",
 	"overview": "ISPL Grand Finale will be organized at Physical location based major participants location requests. ",
@@ -34,7 +34,7 @@
 		}
 	]
 },
-"stage3":{
+{
 	"id": 3,
 	"stage": "ISPL Stage-3( ISPL Grand Finale)",
 	"overview": "ISPL Grand Finale will be organized at Physical location based major participants location requests. ",
@@ -52,7 +52,7 @@
 		}
 	]
 },
-"stage4":{
+{
 	"id": 4,
 	"stage": "ISPL Stage-4( ISPL Grand Finale)",
 	"overview": "ISPL Grand Finale will be organized at Physical location based major participants location requests. ",
@@ -70,4 +70,4 @@
 		}
 	]
 }
-}
+]
