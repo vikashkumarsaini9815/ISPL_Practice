@@ -9,6 +9,6 @@ admin.site.register(Team, TeamAdmin)
 
 
 class StudentAdmin(admin.ModelAdmin):
-    list_display= ['id','name','contact','email','school_name','address','create_time','update_time',]
+    list_display= ['id','name','contact','email','school_name','address','create_time','update_time','is_lead']
     search_fields = ['name',]
 admin.site.register(Student, StudentAdmin)

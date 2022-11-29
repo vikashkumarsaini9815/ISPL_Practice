@@ -15,6 +15,13 @@ class All_infoAPIView(APIView):
         return Response(reference_data)
 
 
+class registration_GET_APIView(APIView):
+    def get (self, request, format = None):
+        file = open("registration_data.json","r")
+        x = file.read()
+        reference_data = json.loads(x)
+        return Response(reference_data)
+
 
 class RegistrationAPIView(APIView):
     def post (self, request, format = None):

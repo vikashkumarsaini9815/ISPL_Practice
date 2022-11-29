@@ -1,4 +1,5 @@
 from django.db import models
+from django.db.models.aggregates import Max
 
 # Create your models here.
 
@@ -12,10 +13,15 @@ class Student(models.Model):
     address =models.TextField(null = True, blank = True)
     create_time = models.DateTimeField(auto_now_add = True, null = True, blank =True)
     update_time = models.DateTimeField(auto_now_add = True, null = True, blank =True)
+    is_lead = models.BooleanField(default=False)
+
+
+    class Meta:
+        ordering = ['name']
 
 
     def __str__(self):
-        return self.name
+        return f'{self.name},{self.contact},{self.email},{self.school_name},{self.address}'
 
 
 class Team(models.Model):
@@ -23,6 +29,10 @@ class Team(models.Model):
     project_idea = models.TextField(null = True, blank = True)
     project_discrapition = models.TextField(null = True, blank = True)
     student = models.ManyToManyField(Student)
+
+
+    class Meta:
+        ordering = ['team_name']
 
     def __str__(self):
         return self.team_name

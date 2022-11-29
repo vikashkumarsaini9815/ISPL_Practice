@@ -12,7 +12,7 @@ class StudentSerializer(serializers.ModelSerializer):
 
 
 class TeamSerializer(serializers.ModelSerializer):
-    challenges=StudentSerializer(many=True, read_only=True)
+    student = StudentSerializer(many=True, read_only=True)
     class Meta:
         model = Team
-        fields = '__all__'
+        fields = ['team_name','project_idea', 'project_discrapition','student']

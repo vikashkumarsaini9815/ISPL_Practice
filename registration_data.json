@@ -1,0 +1,29 @@
+{
+    
+    "team_name":"kings",
+    "project_idea": "llakkdm  jdj",
+    "project_discrapition": "dfghjkl",
+    "students": [{"name": "Vikash Kumar",
+    "contact": "950983858",
+    "email": "vicky123@gmail.com",
+    "school_name": "jaipur school",
+    "address": "jaipur",
+    "is_lead":"True"
+        
+    },
+  {
+      "name": "pooja",
+      "contact":"74685849",
+      "email": "pooja123@gmail.com",
+      "school_name": "Rama school",
+      "address": "khejroli"
+      
+  },
+{
+      "name": "Kartoos",
+      "contact":"74685849",
+      "email": "kartoos123@gmail.com",
+      "school_name": "kota school",
+      "address": "kota"
+      
+  }]}
