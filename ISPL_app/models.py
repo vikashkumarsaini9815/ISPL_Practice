@@ -25,7 +25,7 @@ class Student(models.Model):
 
 
 class Team(models.Model):
-    team_name = models.CharField(max_length = 255, null = True, blank = True)
+    team_name = models.CharField(max_length = 255, unique=True )
     project_idea = models.TextField(null = True, blank = True)
     project_discrapition = models.TextField(null = True, blank = True)
     student = models.ManyToManyField(Student)
