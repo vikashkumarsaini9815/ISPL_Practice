@@ -133,8 +133,8 @@ DATABASES = {
         'NAME': 'ISPL_database',
         'USER': 'ISPL_user',
         'PASSWORD': 'isplpass@123',
-        'HOST': 'localhost',
-        'PORT': '5432',
+        # 'HOST': 'localhost',
+        # 'PORT': '5432',
     }
 }
 
