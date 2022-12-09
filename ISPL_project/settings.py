@@ -130,11 +130,11 @@ WSGI_APPLICATION = 'ISPL_project.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'ISPL_database',
+        'NAME': 'ispl_database',
         'USER': 'ISPL_user',
         'PASSWORD': 'isplpass@123',
-        # 'HOST': 'localhost',
-        # 'PORT': '5432',
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
 }
 
