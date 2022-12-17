@@ -10,7 +10,7 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("allinfo/", All_infoAPIView.as_view(),name='allifoAPIView'),
     path("registration_data/", registration_GET_APIView.as_view(),name='registration_data'),
-   # path("registration_update/", Registration_updateAPIView.as_view(),name='registration_update'),
+    path("registration_update/", Registration_updateAPIView.as_view(),name='registration_update'),
     path("registration/", RegistrationAPIView.as_view(),name='registration')
 ]
 
