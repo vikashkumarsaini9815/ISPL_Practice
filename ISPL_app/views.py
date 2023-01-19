@@ -3,6 +3,7 @@ import json
 from rest_framework.response import Response
 from ISPL_app.models import Student, Team
 from rest_framework import status
+from ISPL_app.serializer import StudentSerializer, TeamSerializer
 
 # Create your views here.
 
@@ -17,10 +18,12 @@ class All_infoAPIView(APIView):
 
 class registration_GET_APIView(APIView):
     def get (self, request, format = None):
-        file = open("registration_data.json","r")
-        x = file.read()
-        reference_data = json.loads(x)
-        return Response(reference_data)
+        # file = open("registration_data.json","r")
+        # x = file.read()
+        student = Team.objects.all()
+        serializer = TeamSerializer(student, many = True)
+        # reference_data = json.loads(x)
+        return Response(serializer.data)
 
 
 class RegistrationAPIView(APIView):
@@ -100,5 +103,5 @@ class Registration_updateAPIView(APIView):
                 return Response(response)
 
         except KeyError:
-            response = {"message":"Please choose correct key"}
+            response = {"message":"Please choose correct key and check request data"}
             return Response(response, status=status.HTTP_400_BAD_REQUEST)
