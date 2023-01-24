@@ -36,3 +36,23 @@ class Team(models.Model):
 
     def __str__(self):
         return self.team_name
+
+
+# class Student(models.Model):
+#     name = models.CharField(max_length=255, null = True, blank = True)
+#     contact = models.CharField(max_length = 12, unique=True)
+#     email = models.EmailField(null = True, blank = True)
+#     school_name = models.CharField(max_length=255, null = True, blank = True)
+#     address =models.TextField(null = True, blank = True)
+#     create_time = models.DateTimeField(auto_now_add = True, null = True, blank =True)
+#     update_time = models.DateTimeField(auto_now_add = True, null = True, blank =True)
+#     is_lead = models.BooleanField(default=False)
+#     team = models.ManyToManyField(Team)
+
+
+#     class Meta:
+#         ordering = ['name']
+
+
+#     def __str__(self):
+#         return f'{self.name},{self.contact},{self.email},{self.school_name},{self.address}'

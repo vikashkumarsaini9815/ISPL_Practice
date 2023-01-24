@@ -3,7 +3,9 @@ import json
 from rest_framework.response import Response
 from ISPL_app.models import Student, Team
 from rest_framework import status
-from ISPL_app.serializer import StudentSerializer, TeamSerializer
+from ISPL_app.serializer import *
+import sys
+from django.core.exceptions import ObjectDoesNotExist
 
 # Create your views here.
 
@@ -16,14 +18,46 @@ class All_infoAPIView(APIView):
         return Response(reference_data)
 
 
+# class registration_GET_APIView(APIView):
+#     def get(self, request,pk, format=None):
+#         try:
+#             result=[]
+#             students=Student.objects.get(pk = pk)
+#             levels=Team.objects.filter(student=students)
+#             print("print..........", levels)
+#             # for level in levels:
+#             #     challenge= Challenge.objects.filter(level=level)
+#             #     serializer_context = {'request': request,}
+#             #     serializer = ChallengeSerializer(challenge, context=serializer_context, many=True)
+#             #     data=serializer.data
+#             #     result.append(data)
+#             return Response(result)
+#         except ObjectDoesNotExist:
+#             exc_type, exc_obj, exc_tb = sys.exc_info()
+#             response={"exception_type":exc_type.__name__,"filename": exc_tb.tb_frame.f_code.co_filename,"error_line_no":exc_tb.tb_lineno,"message":"No such user"}
+#             return Response(response, status=status.HTTP_401_UNAUTHORIZED)
+#     # def get (self, request, format = None):
+#     #     # file = open("registration_data.json","r")
+#     #     # x = file.read()
+#     #     student = Student.objects.get(pk=1)
+#     #     serializer = TeamSerializer(student)
+#     #     # reference_data = json.loads(x)
+#     #     return Response(serializer.data)
+
+# class registration_GET_APIView(APIView):
+#     def get(self, request, format=None):
+#         team = Student.objects.get(id=1)
+#         serializer = StudentSerializer(team, many = True)
+#         print("T..........",team)
+#         return Response(serializer.data)
+
 class registration_GET_APIView(APIView):
-    def get (self, request, format = None):
-        # file = open("registration_data.json","r")
-        # x = file.read()
-        student = Team.objects.all()
-        serializer = TeamSerializer(student, many = True)
-        # reference_data = json.loads(x)
+    def get(self, request, format=None):
+        team = Student.objects.all()
+        serializer = StudentSerializer(team, many = True)
+        print("T..........",team)
         return Response(serializer.data)
+
 
 
 class RegistrationAPIView(APIView):
