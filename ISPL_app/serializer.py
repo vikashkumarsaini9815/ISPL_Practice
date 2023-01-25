@@ -10,15 +10,15 @@ from ISPL_app.models import Student,Team
 #         fields = '__all__'
 
 
-class TeamSerializer(serializers.ModelSerializer):
-    # student = StudentSerializer(many=True, read_only=True)
-    class Meta:
-        model = Team
-        fields = ['team_name','project_idea', 'project_discrapition']
+# class TeamSerializer(serializers.ModelSerializer):
+#     # student = StudentSerializer(many=True, read_only=True)
+#     class Meta:
+#         model = Team
+#         fields = ['team_name','project_idea', 'project_discrapition']
 
 
-class StudentSerializer(serializers.ModelSerializer):
-    team = TeamSerializer(many=True, read_only=True)
-    class Meta:
-        model = Student
-        fields = ['id','name','contact','email','school_name','address','create_time','update_time','is_lead','team']
+# class StudentSerializer(serializers.ModelSerializer):
+#     team = TeamSerializer(many=True, read_only=True)
+#     class Meta:
+#         model = Student
+#         fields = ['id','name','contact','email','school_name','address','create_time','update_time','is_lead','team']

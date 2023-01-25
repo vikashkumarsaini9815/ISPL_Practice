@@ -6,6 +6,7 @@ from rest_framework import status
 from ISPL_app.serializer import *
 import sys
 from django.core.exceptions import ObjectDoesNotExist
+import  traceback
 
 # Create your views here.
 
@@ -51,28 +52,35 @@ class All_infoAPIView(APIView):
 #         print("T..........",team)
 #         return Response(serializer.data)
 
-class registration_GET_APIView(APIView):
-    def get(self, request, format=None):
-        team = Student.objects.all()
-        serializer = StudentSerializer(team, many = True)
-        print("T..........",team)
-        return Response(serializer.data)
+# class registration_GET_APIView(APIView):
+#     def get(self, request, format=None):
+#         team = Student.objects.all()
+#         serializer = StudentSerializer(team, many = True)
+#         print("T..........",team)
+#         return Response(serializer.data)
 
 
 
 class RegistrationAPIView(APIView):
     def post (self, request, format = None):
+        data = request.data
+        print(data)
         try:
         
-            data = request.data
+            # data = request.data
+            # print(data)
             team_name = data["team_name"]
+           # print("team ....",team_name)
             project_idea = data["project_idea"]
+            print("project.....",project_idea)
             project_discrapition = data["project_discrapition"]
             try:
                 T1 = Team(team_name=team_name, project_idea=project_idea, project_discrapition=project_discrapition)
                 T1.save()
                 student = data["students"]
+               # print(student)
                 for ele in student:
+                    print("student..............",ele)
                     name = ele["name"]
                     contact = ele["contact"]
                     email = ele["email"]
@@ -87,11 +95,12 @@ class RegistrationAPIView(APIView):
                 return Response(response,status=status.HTTP_200_OK)
 
             except:
-                        
+                print(traceback.format_exc())        
                 response = {"success": " " + team_name + " Team are all ready exist "}
                 return Response(response)
 
         except KeyError:
+            print(traceback.format_exc())
             return Response({"success":False},status=status.HTTP_400_BAD_REQUEST)
 
 
