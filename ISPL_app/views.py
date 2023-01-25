@@ -64,7 +64,7 @@ class All_infoAPIView(APIView):
 class RegistrationAPIView(APIView):
     def post (self, request, format = None):
         data = request.data
-        print(data)
+        print("Team Data...............",data)
         try:
         
             # data = request.data
