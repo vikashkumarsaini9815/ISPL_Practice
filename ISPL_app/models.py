@@ -35,7 +35,7 @@ class Team(models.Model):
         ordering = ['team_name']
 
     def __str__(self):
-        return self.team_name
+        return f'{self.team_name},{self.project_idea},{self.project_discrapition},{self.student}'
 
 
 # class Student(models.Model):
