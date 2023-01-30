@@ -22,6 +22,45 @@ class All_infoAPIView(APIView):
 
 
 
+class Add_StudentAPIView(APIView):
+    def post (self, request, format = None):
+        data = request.data
+        team_id = data["team_id"]
+        try:
+            return Team.objects.get(id=team_id)
+        except Team.DoesNotExist:
+            raise Http404
+    def post (self, request, format = None):
+        data = request.data
+        try:
+            team_id = data["team_id"]
+            name = data["name"]
+            contact = data["contact"]
+            email = data["email"]
+            school_name = data["school_name"]
+            address = data["address"]
+            is_lead = data["is_lead"]
+
+            try:
+                student = Student.objects.get(contact=contact)
+                return Response({"message":"This contact alredy exist"})
+            except:
+
+                T1 = Team.objects.get(id=team_id)
+                S1 = Student(name=name, contact=contact, email=email, school_name=school_name, address=address,is_lead = is_lead)
+                S1.save()
+                T1.student.add(S1)
+                print(traceback.format_exc())        
+                response = {"success":"Students Successfully Add"}
+                print(traceback.format_exc()) 
+                return Response(response, status=status.HTTP_200_OK)
+                       
+                
+        except KeyError:
+            print(traceback.format_exc())
+            return Response({"success":"BAD Request"},status=status.HTTP_400_BAD_REQUEST)
+
+
 
 class registration_GET_APIView(APIView):
     def get_object(self, pk):

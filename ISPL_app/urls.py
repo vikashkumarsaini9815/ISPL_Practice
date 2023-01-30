@@ -9,6 +9,7 @@ from django.conf.urls.static import static
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("allinfo/", All_infoAPIView.as_view(),name='allifoAPIView'),
+    path("add_student/", Add_StudentAPIView.as_view(),name='student add'),
     path("registration_data/<int:pk>/", registration_GET_APIView.as_view(),name='registration_data'),
     path("registration_update/", Registration_updateAPIView.as_view(),name='registration_update'),
     path("registration/", RegistrationAPIView.as_view(),name='registration')
