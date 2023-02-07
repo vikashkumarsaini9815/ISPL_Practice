@@ -147,44 +147,42 @@ class RegistrationAPIView(APIView):
 
 
 class Registration_updateAPIView(APIView):
-    def put(self, request, format=None):
+    def put(self, request, format=None): 
+        data = request.data
+        id = data["id"] 
+        team_name = data["team_name"]
+        project_idea = data["project_idea"]
+        project_discrapition = data["project_discrapition"]
+        student_data = data["students"]
         
-        
-        try:
-            data = request.data
-            id = data["id"] 
-            team_name = data["team_name"]
-            project_idea = data["project_idea"]
-            project_discrapition = data["project_discrapition"]
-            student_data = data["students"]
-            try:
-                T2 = Team.objects.get(id = id)
-                T2.team_name = team_name
-                T2.project_idea = project_idea
-                T2.project_discrapition = project_discrapition
-                T2.save()
-                for ele in student_data:
-                    id = ele["id"]
-                    contact = ele["contact"]
-                    name = ele["name"]
-                    email = ele["email"]
-                    school_name = ele["school_name"]
-                    address = ele["address"]
-                    is_lead = ele["is_lead"]
-                    S = Student.objects.get(id = id)
-                    S.name = name
-                    S.contact = contact
-                    S.email = email    
-                    S.school_name = school_name
-                    S.address = address
-                    S.is_lead = is_lead
-                    S.save()
-                response = {"success":True, "message":"update data successfully"}
-                return Response(response,status=status.HTTP_200_OK)
-            except:
-                response = {"success":False, "message":"data not update"}
-                return Response(response)
+        T2 = Team.objects.get(id = id)
+        T2.team_name = team_name
+        T2.project_idea = project_idea
+        T2.project_discrapition = project_discrapition
+        T2.save()
+        for ele in student_data:
+            id = ele["id"]
+            contact = ele["contact"]
+            name = ele["name"]
+            email = ele["email"]
+            school_name = ele["school_name"]
+            address = ele["address"]
+            is_lead = ele["is_lead"]
+            S = Student.objects.get(id = id)
+            S.name = name
+            S.contact = contact
+            S.email = email    
+            S.school_name = school_name
+            S.address = address
+            S.is_lead = is_lead
+            S.save()
+        response = {"success":True, "message":"update data successfully"}
+        return Response(response,status=status.HTTP_200_OK)
+            
 
-        except KeyError:
-            response = {"message":"Please choose correct key and check request data"}
-            return Response(response, status=status.HTTP_400_BAD_REQUEST)
+       
+
+
+
+
+
